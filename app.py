@@ -23,10 +23,11 @@ def predict():
     # Return the prediction as a JSON response
     return jsonify({'prediction': prediction[0]})
 
-# Start the Flask server
-if __name__ == '__main__':
-    app.run(debug=True)
-
+# Define the root route
 @app.route('/')
 def index():
     return "Flask app is running!"
+
+# Start the Flask server
+if __name__ == '__main__':
+    app.run(debug=True)
