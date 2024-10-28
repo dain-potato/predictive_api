@@ -4,7 +4,9 @@ import joblib
 app = Flask(__name__)
 
 # Load the trained model
-model = joblib.load('maintenance_model.pkl')
+# model = joblib.load('maintenance_model.pkl')
+model_path = os.path.join(os.path.dirname(__file__), 'maintenance_model.pkl')
+model = joblib.load(model_path)
 
 # Define a route for predictions
 @app.route('/predict', methods=['POST'])
