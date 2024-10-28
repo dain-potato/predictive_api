@@ -9,7 +9,7 @@ import joblib
 # Step 1: Connect to the MySQL database
 db_connection = mysql.connector.connect(
     host='165.22.59.23',  # XAMPP default host
-    user='root',  # XAMPP default user
+    user='laraveluser',  # XAMPP default user
     password='password',  # Leave password blank unless you have set one
     database='fixedasset'  # Your database name
 )
