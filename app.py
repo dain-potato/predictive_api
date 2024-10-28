@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 import joblib
 
 app = Flask(__name__)
+CORS(app)
 
 # Load the trained model
 # model = joblib.load('maintenance_model.pkl')
@@ -26,7 +27,7 @@ def predict():
     return jsonify({'prediction': prediction[0]})
 
 # Define the root route
-@app.route('/')
+@app.route('/', methods=['GET'])
 def index():
     return "Flask app is running!"
 
