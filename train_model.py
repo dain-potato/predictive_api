@@ -9,10 +9,10 @@ from sklearn.utils import resample
 # Connect to the MySQL database
 try:
     db_connection = mysql.connector.connect(
-        host='localhost',
-        user='root',
-        password='',
-        database='fixedasset'
+      host='165.22.59.23',  # XAMPP default host
+      user='laraveluser',  # XAMPP default user
+      password='password',  # Leave password blank unless you have set one
+      database='fixedasset'  # Your database name
     )
 except mysql.connector.Error as err:
     print(f"Error: {err}")
