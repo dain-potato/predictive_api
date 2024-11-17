@@ -16,12 +16,18 @@ def predict():
     data = request.get_json()
 
     # Extract features from the request
-    repair_count = data['repair_count']
-    average_cost = data['average_cost']
-    time_between_repairs = data['time_between_repairs']
+    features = [
+        data['purchase_cost'],
+        data['lifespan_years'],
+        data['salvage_value'],
+        data['depreciation_per_year'],
+        data['repair_count'],
+        data['average_cost'],
+        data['time_between_repairs']
+    ]
 
     # Make a prediction using the model
-    prediction = model.predict([[repair_count, average_cost, time_between_repairs]])
+    prediction = model.predict([features])
 
     # Return the prediction as a JSON response
     return jsonify({'prediction': prediction[0]})
